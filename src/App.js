@@ -25,9 +25,16 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = expense =>{
+    console.log('in App.js');
+    console.log (expense);
+  }
+
   return (
     <div>
-      <NewExpense />
+    {/* onAddExpense is a function that points to a function addExpenseHandler
+    that's declared in this component */}
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses items={expenses} />
     </div>
   );
